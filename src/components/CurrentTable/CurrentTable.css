@@ -1,0 +1,26 @@
+
+.sort__button{
+    width: 100%;
+    display: inline-block;
+    border: none;
+}
+.header{
+    border: 2px solid #90969d;
+}
+
+.filter__input {
+    border: 2px solid #000;
+}
+.filter__button {
+    margin-top: 0.5rem;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+
+}
+.fixed {
+    width: 100%;
+    position: fixed;
+    top: 0;
+    margin-right: -50%;
+}
