@@ -3,6 +3,13 @@
     width: 100%;
     display: inline-block;
     border: none;
+    outline: none;
+}
+.sort__button:hover {
+    background-color: #bdc3cb;
+}
+.sort__button:active {
+    background-color: #91979c;
 }
 .header{
     border: 2px solid #b12e07;

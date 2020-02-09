@@ -9,7 +9,6 @@ const BodyOfTable = () => {
             tableArray.filter(row => row[filtredCol].toLowerCase().indexOf(filtredValue[filtredCol].toLowerCase()) >= 0)
             :
             tableArray;
-    console.log(isFiltredTableArray)
 
     return (
         <tbody>
@@ -19,6 +18,7 @@ const BodyOfTable = () => {
                         <td key={indexCol}>
                             <input key={indexCol+indexRow}
                                    type="text"
+                                   readOnly={filtred? true : false}
                                    className={indexCol % 2 === 1? 'even__col' : ''}
                                    value={isFiltredTableArray[indexRow]? isFiltredTableArray[indexRow][indexCol] : ''}
                                    onChange={(e) => dispatch({
