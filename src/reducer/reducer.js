@@ -71,12 +71,9 @@ export const Reducer = (state, action) =>
 
             case 'HANDLE__FILTER':
                 draft.filtredValue[action.payload] = action.value;
-                break;
-
-            case 'FILTER__TOGGLE':
-                draft.filtred = action.isFultred;
                 draft.filtredCol = action.payload;
-                break
+                draft.filtred = action.value === ''? false : true;
+                break;
 
          }
     })

@@ -5,9 +5,11 @@
     border: none;
 }
 .header{
-    border: 2px solid #90969d;
+    border: 2px solid #b12e07;
 }
-
+.even__col{
+    background-color: #ff84002e;
+}
 .filter__input {
     border: 2px solid #000;
 }

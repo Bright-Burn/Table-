@@ -23,7 +23,7 @@ const CurrentTable = () => {
            colArray.push(i)
         }
        return (
-            <table>
+            <table >
 
                 <HeaderOfTable colArray={colArray}/>
                 <BodyOfTable colArray={colArray} rowArray={rowArray}/>

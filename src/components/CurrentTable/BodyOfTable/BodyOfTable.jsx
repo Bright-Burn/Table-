@@ -5,7 +5,11 @@ const BodyOfTable = () => {
     const {state, dispatch} = useContext(ContextApp);
     const {tableArray, filtred, filtredCol, filtredValue} = state;
 
-    const isFiltredTableArray = filtred ? tableArray.filter(row => row[filtredCol] === filtredValue[filtredCol]) : tableArray;
+    const isFiltredTableArray = filtred ?
+            tableArray.filter(row => row[filtredCol].toLowerCase().indexOf(filtredValue[filtredCol].toLowerCase()) >= 0)
+            :
+            tableArray;
+    console.log(isFiltredTableArray)
 
     return (
         <tbody>
@@ -15,6 +19,7 @@ const BodyOfTable = () => {
                         <td key={indexCol}>
                             <input key={indexCol+indexRow}
                                    type="text"
+                                   className={indexCol % 2 === 1? 'even__col' : ''}
                                    value={isFiltredTableArray[indexRow]? isFiltredTableArray[indexRow][indexCol] : ''}
                                    onChange={(e) => dispatch({
                                        type: 'VALUE__CHANGE',

@@ -40,28 +40,13 @@ const SortFilterTableFooter = ({colArray}) => {
                     <td key={indexOfFiltredCol+1}>
                         <input key={indexOfFiltredCol}
                                className='filter__input'
+                               placeholder='filter...'
                                onChange={(e) => dispatch({
                                    type: 'HANDLE__FILTER',
                                    payload: indexOfFiltredCol,
                                    value: e.target.value
                                })
                                }/>
-
-                        <div className='filter__button'>
-                            <button onClick={() => dispatch({
-                                type: 'FILTER__TOGGLE',
-                                payload: indexOfFiltredCol,
-                                isFultred: true
-                            })}>Filter</button>
-                        </div>
-
-                        <div className='filter__button'>
-                            <button onClick={() => dispatch({
-                                type: 'FILTER__TOGGLE',
-                                payload: indexOfFiltredCol,
-                                isFultred: false
-                            })}>Cancel</button>
-                        </div>
 
                     </td> )}
             </tr>
