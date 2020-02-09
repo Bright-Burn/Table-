@@ -1,13 +1,14 @@
 import React, {useContext} from 'react';
 import {ContextApp} from "../../../reducer/reducer";
 
-const SortFilterTableFooter = ({colArray}) => {
+const SortFilterTableFooter = () => {
     const {state, dispatch} = useContext(ContextApp);
+    const {tableArray} = state
 
     return (
         <tfoot>
             <tr>
-                {colArray.map((item, indexOfSortedCol) =>
+                {tableArray[0].map((item, indexOfSortedCol) =>
                     <td key={indexOfSortedCol}>
                         <button key={Math.random()}
                                 className='sort__button'
@@ -22,7 +23,7 @@ const SortFilterTableFooter = ({colArray}) => {
 
             <tr>
 
-                {colArray.map((item, indexOfSortedCol) =>
+                {tableArray[0].map((item, indexOfSortedCol) =>
                     <td key={indexOfSortedCol}>
                         <button key={Math.random()}
                                 className='sort__button'
@@ -36,7 +37,7 @@ const SortFilterTableFooter = ({colArray}) => {
             </tr>
 
             <tr>
-                {colArray.map((item, indexOfFiltredCol) =>
+                {tableArray[0].map((item, indexOfFiltredCol) =>
                     <td key={indexOfFiltredCol+1}>
                         <input key={indexOfFiltredCol}
                                className='filter__input'

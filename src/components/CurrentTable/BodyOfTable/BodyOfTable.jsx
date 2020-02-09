@@ -6,9 +6,9 @@ const BodyOfTable = () => {
     const {tableArray, filtred, filtredCol, filtredValue} = state;
 
     const isFiltredTableArray = filtred ?
-            tableArray.filter(row => row[filtredCol].toLowerCase().indexOf(filtredValue[filtredCol].toLowerCase()) >= 0)
-            :
-            tableArray;
+        tableArray.filter(row => row[filtredCol].toLowerCase().indexOf(filtredValue[filtredCol].toLowerCase()) >= 0)
+        :
+        tableArray;
 
     return (
         <tbody>

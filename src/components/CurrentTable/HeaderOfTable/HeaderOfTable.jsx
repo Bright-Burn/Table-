@@ -1,9 +1,10 @@
 import React, {useContext, useEffect, useState} from 'react';
 import {ContextApp} from "../../../reducer/reducer";
 
-const HeaderOfTable = ({colArray}) => {
+const HeaderOfTable = () => {
 
     const {state, dispatch} = useContext(ContextApp);
+    const {tableArray} = state
 
     const [ scrolled, setScrolled ] = useState();
 
@@ -25,7 +26,7 @@ const HeaderOfTable = ({colArray}) => {
     return (
         <thead >
             <tr id='header' className={scrolled? 'fixed' : ''}>
-                {colArray.map((item, indexOfHeader) =>
+                {tableArray[0].map((item, indexOfHeader) =>
                     <th key={indexOfHeader}>
                         <input key={indexOfHeader+1}
                                className='header'
