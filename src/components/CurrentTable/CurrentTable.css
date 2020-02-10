@@ -27,7 +27,7 @@ td, th, input {
 .sort__button:active {
     background-color: #91979c;
 }
-.header{
+.table__title{
     border: 2px solid #b12e07;
 }
 .even__col{

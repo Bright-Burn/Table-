@@ -10,7 +10,7 @@ const HeaderOfTable = () => {
 
     useEffect(() => {
         const handleScroll = () => {
-            const header = document.getElementById('header')
+            const header = document.getElementById('table__title')
             if (window.pageYOffset > header.offsetHeight ) {
                 setScrolled(true)
             } else {
@@ -25,11 +25,11 @@ const HeaderOfTable = () => {
 
     return (
         <thead >
-            <tr id='header' className={scrolled? 'fixed' : ''}>
+            <tr id='table__title' className={scrolled? 'fixed' : ''}>
                 {tableArray[0].map((item, indexOfHeader) =>
                     <th key={indexOfHeader}>
                         <input key={indexOfHeader+1}
-                               className='header'
+                               className='table__title'
                                type="text"
                                onChange={(e) => dispatch({
                                    type: 'SET__HEADER',
