@@ -1,3 +1,19 @@
+input {
+    height: 1.5rem;
+    background-color: inherit;
+    outline: none;
+}
+tr:hover {
+    background-color: #e1e7ee;
+}
+th input {
+    background-color: #fff;
+}
+td, th, input {
+    margin: 0;
+    padding: 0;
+  text-align: center
+}
 
 .sort__button{
     width: 100%;
@@ -20,6 +36,7 @@
 .filter__input {
     border: 2px solid #000;
 }
+
 .filter__button {
     margin-top: 0.5rem;
     display: flex;
@@ -27,6 +44,7 @@
     justify-content: center;
 
 }
+
 .fixed {
     width: 100%;
     position: fixed;
