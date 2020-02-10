@@ -30,7 +30,7 @@ export const Reducer = (state, action) =>
                 for (let i = 0; i < state.row; i++) {
                     let colArray = [];
                     for (let j = 0; j < state.col; j++) {
-                        colArray.push('')
+                        colArray.push({id: ''+i+j, value: ''})
                     }
                     array.push(colArray)
                 }
@@ -38,26 +38,31 @@ export const Reducer = (state, action) =>
                 draft.tableArray = array;
                 break;
 
-
             case 'VALUE__CHANGE':
-                draft.tableArray[action.indexRow][action.indexCol] = action.payload;
+                    const updatedTaleArray = draft.tableArray.map(row => {
+                    if(row[action.indexCol].id === action.id) {
+                        row[action.indexCol].value = action.payload;
+                        return row;
+                    }
+                        return row });
+                draft.tableArray = updatedTaleArray;
                 break;
 
             case 'HANDLE__SORT':
 
                 draft.tableArray.sort((a,b) => {
-                    if (isNaN(+a[action.payload])?
-                        a[action.payload] > b[action.payload]
+                    if (isNaN(+a[action.payload].value)?
+                        a[action.payload].value > b[action.payload].value
                         :
-                        +a[action.payload] > +b[action.payload]) {
+                        +a[action.payload].value > +b[action.payload].value) {
                         if(action.sortUp) {
                             return 1
                         }
                         return -1
-                    } else if (isNaN(+a[action.payload])?
-                        a[action.payload] < b[action.payload]
+                    } else if (isNaN(+a[action.payload].value)?
+                        a[action.payload].value < b[action.payload].value
                         :
-                        +a[action.payload] < +b[action.payload]) {
+                        +a[action.payload].value < +b[action.payload].value) {
                         if(action.sortUp) {
                             return -1
                         }

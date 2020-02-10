@@ -6,7 +6,7 @@ const BodyOfTable = () => {
     const {tableArray, filtred, filtredCol, filtredValue} = state;
 
     const isFiltredTableArray = filtred ?
-        tableArray.filter(row => row[filtredCol].toLowerCase().indexOf(filtredValue[filtredCol].toLowerCase()) >= 0)
+        tableArray.filter(row => row[filtredCol].value.toLowerCase().indexOf(filtredValue[filtredCol].toLowerCase()) >= 0)
         :
         tableArray;
 
@@ -18,14 +18,14 @@ const BodyOfTable = () => {
                         <td key={indexCol}>
                             <input key={indexCol+indexRow}
                                    type="text"
-                                   readOnly={filtred? true : false}
                                    className={indexCol % 2 === 1? 'even__col' : ''}
-                                   value={isFiltredTableArray[indexRow]? isFiltredTableArray[indexRow][indexCol] : ''}
+                                   value={isFiltredTableArray[indexRow]? isFiltredTableArray[indexRow][indexCol].value  : ''}
                                    onChange={(e) => dispatch({
                                        type: 'VALUE__CHANGE',
                                        payload: e.target.value,
                                        indexCol,
-                                       indexRow
+                                       indexRow,
+                                       id: isFiltredTableArray[indexRow][indexCol].id
                                    })
                                    }/>
                         </td> )}
